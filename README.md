@@ -5,21 +5,29 @@ This repository includes the code of the forecasting framework proposed in paper
 
 Directory Structure:
 ```
-|-main.py - example code to run all forecast models (base learners, combinations) and visulaise forecasts
+|-main.py - example code to run all forecast approaches and visualise
 |-data - data folder
 |-constants.py - constants related to the project
 |-plot.py - functions related to plotting
 |-run_base_models.py - code to run all base learners
-|-run_combination.py - code to run all forecast combination methods
+|-run_combinations.py - code to run all forecast combination methods
 |-timeseries_split.py - class to split time series data
+|-run_global_models.py - code to run global models
+|-forecast_combinations_approach - code for the forecast combination approach (this runs the run_bse_models and run_combinations)
+|-global_forecast_approach - code for the gloabl forecast approach (this runs the run_global_models)
 |-util.py - additional functions
-|- 
+|-boosting - python class implementation of the LightGBM model
+|-combinations - class implemenations for average, pso methods and recursive ensemble
+|-machine_learning - class implementations for linear and support vector regression models
+|-naive_models - class implementation of the seasonal naive model
+|-tsmodels - class implenation of the (s)ARIMA and (s)ARIMAX models
 ```
 Package requirements are listed in `requirements.txt`
 
-A working example of the code is in `main.py` on running the base forecasters and the combinations on a small sample dataset provided in the data folder.
+A working example of the code is in `main.py` for small sample dataset provided in the data folder.
 The following is an example output of the `main.py`
 
+```Mean Absolute Scaled Error (MASE) for the test samples```
 ```json
 {
     "sn": 0.4617352375226971, 
@@ -35,5 +43,5 @@ The following is an example output of the `main.py`
     "lgb": 1.4269188941948645
 }
  ```
- 
+```Visulatisation of the forecasts produced by all approaches``` 
 ![forecasts](data/example_output.png)
