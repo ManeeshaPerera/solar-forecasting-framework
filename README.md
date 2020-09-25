@@ -3,7 +3,7 @@
 
 This repository includes the code of the forecasting framework proposed in paper titled as "A Forecasting Framework for Multi-resolution and Multi-horizon Residential Solar Photovoltaic Power Forecasting"
 
-Directory Structure:
+#### Directory Structure
 ```
 |-main.py - example code to run all forecast approaches and visualise
 |-data - data folder
@@ -22,10 +22,17 @@ Directory Structure:
 |-naive_models - class implementation of the seasonal naive model
 |-tsmodels - class implenation of the (s)ARIMA and (s)ARIMAX models
 ```
+
+#### Package Requirements
 Package requirements are listed in `requirements.txt`
 
+#### Example Code
 A working example of the code is in `main.py` for small sample dataset provided in the data folder.
-The following is an example output of the `main.py`
+
+##### Running the code
+`python main.py`
+
+The following is an example output of the `main.py`. It will provide the mean MASE across all test samples and a visualisation of the forecasts produced by all approaches.
 
 ```Mean Absolute Scaled Error (MASE) for the test samples```
 ```json
