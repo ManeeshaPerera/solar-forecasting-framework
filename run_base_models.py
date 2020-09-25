@@ -5,11 +5,11 @@ from machinelearning.linearregression import LinearRegression
 from machinelearning.svr import SupportVectorRegression
 import pandas as pd
 import constants as const
-from tsmodels.autoregessive_params import model_parameters as md
 
 
 def run_base_models(horizon, train_data, test_data, train_weather, test_weather):
     horizon_info = const.HORIZON_INFO[horizon]
+
     # run the base models
     print('Training base learners started')
     horizon_int = horizon_info["horizon_as_int"]
@@ -17,27 +17,30 @@ def run_base_models(horizon, train_data, test_data, train_weather, test_weather)
     resolution_str = horizon_info["resolution_as_str"]
 
     # Seasonal naive
+    print("Training SN")
     naive_model = NaiveModel(train_data, test_data, horizon_int, resolution,
                              horizon, resolution_str)
     naive_forecasts = naive_model.get_forecasts()
 
     # MLR
+    print("Training MLR")
     mlr = MachineLearningRegression(LinearRegression(), train_data, test_data, horizon_int,
                                     resolution,
                                     horizon, resolution_str, train_weather, test_weather)
     mlr_forecasts = mlr.get_forecasts()
 
     # SVR
+    print("Training SVR")
     svr = MachineLearningRegression(SupportVectorRegression(), train_data, test_data, horizon_int,
                                     resolution,
                                     horizon, resolution_str, train_weather, test_weather)
     svr_forecasts = svr.get_forecasts()
 
-    seasonal_freq = md[resolution]['seasonal_freq']
-    seasonality = md[resolution]['seasonality']
-    fourier_terms = md[resolution]['fourier_terms']
-    fourier = md[resolution]['fourier']
-    maxiter = md[resolution]['maxiter']
+    seasonal_freq = horizon_info['arima_params']['seasonal_freq']
+    seasonality = horizon_info['arima_params']['seasonality']
+    fourier_terms = horizon_info['arima_params']['fourier_terms']
+    fourier = horizon_info['arima_params']['fourier']
+    maxiter = horizon_info['arima_params']['maxiter']
 
     # SARIMA
     print("Training ARIMA")

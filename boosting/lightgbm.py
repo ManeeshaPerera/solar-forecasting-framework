@@ -8,7 +8,7 @@ class LIGHTGBM:
     def __init__(self, X, y, val_X, val_y, horizon, learning_rate=0.05, early_stopping_round=50, num_iterations=200,
                  random_state=11, seed=101, objective='regression', num_leaves=None, feature_fraction=None,
                  bagging_fraction=None, max_depth=None, min_split_gain=None, min_child_weight=None, metric='rmse',
-                 init_points=100, n_iter=100, lags=True):
+                 init_points=10, n_iter=10, lags=True):
         self.X = X
         self.y = y
         self.learning_rate = learning_rate

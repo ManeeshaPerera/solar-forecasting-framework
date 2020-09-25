@@ -25,7 +25,8 @@ def plot_fc(fc_data_frame, actual):
         "pso [0,1]": "PSO [0,1]",
         "pso- convex": "PSO -convex",
         "average": "Average",
-        "re": "RE"
+        "re": "RE",
+        "lgb": "LightGBM"
     }
 
     symbol_conversion = {
@@ -38,7 +39,8 @@ def plot_fc(fc_data_frame, actual):
         "pso [0,1]": 24,
         "pso- convex": 28,
         "average": 32,
-        "re": 36
+        "re": 36,
+        "lgb": 40
     }
 
     color_index = 0
@@ -64,8 +66,8 @@ def plot_fc(fc_data_frame, actual):
 
         color_index = color_index + 1
 
-    figure.update_layout(plot_bgcolor='rgba(0,0,0,0)', height=300,
-                         width=600,
+    figure.update_layout(plot_bgcolor='rgba(0,0,0,0)', height=400,
+                         width=800,
                          margin=go.layout.Margin(
                              l=50,
                              r=20,

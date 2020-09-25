@@ -3,14 +3,13 @@ from combinations.pso_model import PSO
 from combinations.recursive_method import RecursiveEnsemble
 import constants as const
 import pandas as pd
-import tsmodels.autoregessive_params as seasonal_params
 import numpy as np
 
 
 def run_combinations(horizon, forecast, forecast_test, data_train, data_out_sample):
     weights = {'weight': [], 'method': [], 'comb_method': []}
     horizon_info = const.HORIZON_INFO[horizon]
-    seasonality = seasonal_params.model_parameters[horizon_info['resolution']][
+    seasonality = horizon_info['arima_params'][
         'seasonal_freq']
     methods = forecast.columns.tolist()
 
@@ -52,7 +51,7 @@ def run_combinations(horizon, forecast, forecast_test, data_train, data_out_samp
     pso_b_fc_test = pso_b.get_forecast(forecast_test)
 
     # Add to Unity
-    pso_b.weights = pso_b.weights / pso_b.weights .sum()
+    pso_b.weights = pso_b.weights / pso_b.weights.sum()
     add_weights(weights, pso_b.weights, methods, 'pso- convex')
     pso_b_fc_scaled = pso_b.get_forecast(forecast)
     pso_b_fc_test_scaled = pso_b.get_forecast(forecast_test)
