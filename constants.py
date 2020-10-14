@@ -7,6 +7,7 @@ HORIZON_INFO = {
         'resolution': 'H',
         'horizon_as_int': 24,
         'resolution_as_str': '1H',
+        'seasonality': 24,
         'arima_params': {
             'seasonal_freq': 24,
             'seasonality': False,

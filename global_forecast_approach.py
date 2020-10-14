@@ -24,10 +24,10 @@ def get_data(filename):
     # split time series to train and test/ out-samples
     ts_divide = TimeSeriesDivide(data, test_days=2,
                                  resolution=timedelta(hours=1))
-    _, test = ts_divide.split_train_test_by_days()
+    train, test = ts_divide.split_train_test_by_days()
 
-    # split the time series to train-in-sample and train-out-samples to train ensembles
-    ts_divide_ensemble = TimeSeriesDivide(data, test_days=4,
+    # split the time series for training and validation
+    ts_divide_ensemble = TimeSeriesDivide(train, test_days=4,
                                           resolution=timedelta(hours=1))
     train_in_sample, train_out_sample = ts_divide_ensemble.split_train_test_by_days()
 

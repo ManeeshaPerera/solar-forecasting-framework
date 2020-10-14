@@ -46,7 +46,7 @@ if __name__ == '__main__':
     for method in fc:
         mase = util.test_MASE(train['solarpower'].to_numpy(), test['solarpower'].to_numpy(),
                               fc[method].to_numpy(), horizon_info['horizon_as_int'],
-                              24)
+                              horizon_info['seasonality'])
         dic_mase[method] = np.mean(mase)
     print(dic_mase)
 

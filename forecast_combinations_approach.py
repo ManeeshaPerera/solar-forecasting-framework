@@ -15,8 +15,8 @@ def run_forecast_combinations_approach(data, horizon):
                                  resolution=timedelta(hours=1))
     train, test = ts_divide.split_train_test_by_days()
 
-    # split the time series to train-in-sample and train-out-samples to train ensembles
-    ts_divide_ensemble = TimeSeriesDivide(data, test_days=4,
+    # split the in-sample data as training subset 1 and training subset 2
+    ts_divide_ensemble = TimeSeriesDivide(train, test_days=4,
                                           resolution=timedelta(hours=1))
     train_base_learner, train_ensemble = ts_divide_ensemble.split_train_test_by_days()
 
