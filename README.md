@@ -3,7 +3,7 @@
 
 This repository includes the code for the paper titled as "An Ensemble Method with Optimized Weights for Forecasting Distributed Solar Photovoltaic Generation"
 
-### Methodology
+## Methodology
 #### Proposed Forecast Combination Approach 
 
 The below figure illustrates the process of optimization-based (PSO) forecast combination approach based. 
@@ -15,10 +15,10 @@ Two state-of-the-art forecast combination methods RE (Liu, L., Zhan, M., & Bai, 
 Algorithm 1 outlines this approach and is implemented using a LightGBM model.
 ![gfm](data/GFM.png)
 
-### Software Requirements
+## Software Requirements
 Software requirements are listed in `requirements.txt`
 
-### Execution Instructions
+## Execution Instructions
 A example of running the code is in `main.py` for small sample dataset provided in the data folder.
 
 #### Running the code
@@ -45,7 +45,7 @@ The following is an example output of the `main.py`. It will provide the mean MA
 ```Visulatisation of the forecasts produced by all approaches``` 
 ![forecasts](data/example_output.png)
 
-### Directory Structure
+## Directory Structure
 ```
 |-main.py - example code to run all forecast approaches and visualise
 |-data - data folder
