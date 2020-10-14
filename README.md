@@ -1,9 +1,12 @@
-## A Forecasting Framework for Residential Solar Photovoltaic Power Forecasting
+## An Ensemble Method with Optimized Weights for Forecasting Distributed Solar Photovoltaic Generation
 
 
-This repository includes the code of the forecasting framework proposed in paper titled as "A Forecasting Framework for Multi-resolution and Multi-horizon Residential Solar Photovoltaic Power Forecasting"
+This repository includes the code for the paper titled as "An Ensemble Method with Optimized Weights for Forecasting Distributed Solar Photovoltaic Generation"
 
-#### Directory Structure
+### Package Requirements
+Package requirements are listed in `requirements.txt`
+
+### Directory Structure
 ```
 |-main.py - example code to run all forecast approaches and visualise
 |-data - data folder
@@ -23,11 +26,8 @@ This repository includes the code of the forecasting framework proposed in paper
 |-tsmodels - class implenation of the (s)ARIMA and (s)ARIMAX models
 ```
 
-#### Package Requirements
-Package requirements are listed in `requirements.txt`
-
-#### Example Code
-A working example of the code is in `main.py` for small sample dataset provided in the data folder.
+### Execution Instructions
+A example of running the code is in `main.py` for small sample dataset provided in the data folder.
 
 ##### Running the code
 `python main.py`
