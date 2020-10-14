@@ -15,8 +15,8 @@ Two state-of-the-art forecast combination methods RE (Liu, L., Zhan, M., & Bai, 
 Algorithm 1 outlines this approach and is implemented using a LightGBM model.
 ![gfm](data/GFM.png)
 
-### Package Requirements
-Package requirements are listed in `requirements.txt`
+### Software Requirements
+Software requirements are listed in `requirements.txt`
 
 ### Execution Instructions
 A example of running the code is in `main.py` for small sample dataset provided in the data folder.
