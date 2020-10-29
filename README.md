@@ -34,7 +34,7 @@ The following is an example output of the `main.py`. It will provide the mean MA
     "(s)arimax": 0.7290526167551878, 
     "mlr": 0.9119233826493682, 
     "svr": 0.8491110380174636, 
-    "pso": 1.0867953618937825, 
+    "pso- unconstrained": 1.0867953618937825, 
     "pso [0,1]": 0.4541319252235865, 
     "pso- convex": 0.6832882493648744, 
     "average": 0.6411990407241464, 

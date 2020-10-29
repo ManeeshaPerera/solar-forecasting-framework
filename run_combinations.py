@@ -36,7 +36,7 @@ def run_combinations(horizon, forecast, forecast_test, data_train, data_out_samp
               seasonality, options=pso_initial_options)
     pso.hyper_parameter_search()
     pso.find_weights()
-    add_weights(weights, pso.weights, methods, 'pso')
+    add_weights(weights, pso.weights, methods, 'pso- unconstrained')
     pso_fc = pso.get_forecast(forecast)
     pso_fc_test = pso.get_forecast(forecast_test)
 
@@ -67,10 +67,10 @@ def run_combinations(horizon, forecast, forecast_test, data_train, data_out_samp
     re_fc_test = re.get_forecast(forecast_test)
 
     train = pd.concat([pso_fc, pso_b_fc, pso_b_fc_scaled, eq_fc, re_fc], axis=1)
-    train.columns = ['pso', 'pso [0,1]', 'pso- convex', 'average', 're']
+    train.columns = ['pso- unconstrained', 'pso [0,1]', 'pso- convex', 'average', 're']
 
     test = pd.concat([pso_fc_test, pso_b_fc_test, pso_b_fc_test_scaled, eq_fc_test, re_fc_test], axis=1)
-    test.columns = ['pso', 'pso [0,1]', 'pso- convex', 'average', 're']
+    test.columns = ['pso- unconstrained', 'pso [0,1]', 'pso- convex', 'average', 're']
 
     return train, test, pd.DataFrame(weights)
 
