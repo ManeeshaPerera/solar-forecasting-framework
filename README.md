@@ -1,19 +1,21 @@
-## An Ensemble Method with Optimized Weights for Forecasting Distributed Solar Photovoltaic Generation
+## Multi-Resolution, Multi-Horizon Distributed SolarPhotovoltaic Power Forecasting 
 
 
-This repository includes the code for the paper titled as "An Ensemble Method with Optimized Weights for Forecasting Distributed Solar Photovoltaic Generation"
+This repository includes the code for the paper titled as "Multi-Resolution, Multi-Horizon Distributed Solar Photovoltaic Power Forecasting with Particle Swarm Optimization Based Forecast Combinations"
 
 ## Methodology
-#### Proposed Forecast Combination Approach 
+#### Forecast Combination Approach 
 
 The below figure illustrates the process of optimization-based (PSO) forecast combination approach. 
 ![combprocess](data/CombProcess.jpg)
 
 Two state-of-the-art forecast combination methods RE (Liu, L., Zhan, M., & Bai, Y. (2019). A recursive ensemble model for forecasting the power output of photovoltaic systems. Solar Energy, 189, 291-298.) and simple averaging of the forecasts are implemented for evaluation.
 
-#### Proposed location-based Global Forecasting Approach
-Algorithm 1 outlines this approach and is implemented using a LightGBM model.
-![gfm](data/GFM.png)
+[comment]: <> (#### Proposed location-based Global Forecasting Approach)
+
+[comment]: <> (Algorithm 1 outlines this approach and is implemented using a LightGBM model.)
+
+[comment]: <> (![gfm]&#40;data/GFM.png&#41;)
 
 ## Software Requirements
 Software requirements are listed in `requirements.txt`
@@ -38,8 +40,7 @@ The following is an example output of the `main.py`. It will provide the mean MA
     "pso [0,1]": 0.4541319252235865, 
     "pso- convex": 0.6832882493648744, 
     "average": 0.6411990407241464, 
-    "re": 0.7161379879466082,
-    "lgb": 1.4269188941948645
+    "re": 0.7161379879466082
 }
  ```
 ```Visulatisation of the forecasts produced by all approaches``` 
@@ -54,11 +55,8 @@ The following is an example output of the `main.py`. It will provide the mean MA
 |-run_base_models.py - code to run all base learners
 |-run_combinations.py - code to run all forecast combination methods
 |-timeseries_split.py - class to split time series data
-|-run_global_models.py - code to run global models
 |-forecast_combinations_approach - code for the forecast combination approach (this runs the run_bse_models and run_combinations)
-|-global_forecast_approach - code for the gloabl forecast approach (this runs the run_global_models)
 |-util.py - additional functions
-|-boosting - python class implementation of the LightGBM model
 |-combinations - class implemenations for average, pso methods and recursive ensemble
 |-machine_learning - class implementations for linear and support vector regression models
 |-naive_models - class implementation of the seasonal naive model
@@ -90,8 +88,6 @@ The following is an example output of the `main.py`. It will provide the mean MA
 The values for the following parameters have been reduced for a faster execution. Increase the value of these parameters to a value `> 100` when executing the code with large amount of data.
 ```
 Class pso_model.py - iterations, hyper_parameter_iter
-Class lightgbm.py - init_points, n_iter 
 ```
-There should be data for more than 1 PV system to run the proposed location-based global forecasting approach.
 
 Change the number of training, testing days passed to the `TimeSeriesDivide` function based on your desired evaluation period

@@ -1,7 +1,6 @@
 # Example code of the forecast framework
 
 from forecast_combinations_approach import run_forecast_combinations_approach as fc_approach
-from global_forecast_approach import run_global_forecast_approach as global_model
 from timeseries_split import TimeSeriesDivide
 import plot
 import numpy as np
@@ -34,20 +33,17 @@ if __name__ == '__main__':
     train, test = ts_divide.split_train_test_by_days()
 
     forecasts_combinations = fc_approach(data, horizon)
-    # global forecast model will read data separately from multiple households and provide forecasts for the house1
-    forecast_global = global_model(horizon)[0]
 
     print("Final forecasts\n")
-    fc = pd.concat([forecasts_combinations, forecast_global], axis=1)
-    print(fc)
+    print(forecasts_combinations)
 
     print("mean MASE across samples\n")
     dic_mase = {}
-    for method in fc:
+    for method in forecasts_combinations:
         mase = util.test_MASE(train['solarpower'].to_numpy(), test['solarpower'].to_numpy(),
-                              fc[method].to_numpy(), horizon_info['horizon_as_int'],
+                              forecasts_combinations[method].to_numpy(), horizon_info['horizon_as_int'],
                               horizon_info['seasonality'])
         dic_mase[method] = np.mean(mase)
     print(dic_mase)
 
-    plot.plot_fc(fc, test).show()
+    plot.plot_fc(forecasts_combinations, test).show()
