@@ -1,15 +1,15 @@
-## Multi-Resolution, Multi-Horizon Distributed SolarPhotovoltaic Power Forecasting 
+## Multi-Resolution, Multi-Horizon Distributed Solar PV Power Forecasting with Forecast Combinations
 
 
-This repository includes the code for the paper titled as "Multi-Resolution, Multi-Horizon Distributed Solar Photovoltaic Power Forecasting with Particle Swarm Optimization Based Forecast Combinations"
+This repository includes the code for the paper titled as "Multi-Resolution, Multi-Horizon Distributed Solar PV Power Forecasting with Forecast Combinations"
 
 ## Methodology
 #### Forecast Combination Approach 
 
-The below figure illustrates the process of optimization-based (PSO) forecast combination approach. 
+The below figure illustrates the process of the forecast combination approach. 
 ![combprocess](data/CombProcess.jpg)
 
-Two state-of-the-art forecast combination methods RE (Liu, L., Zhan, M., & Bai, Y. (2019). A recursive ensemble model for forecasting the power output of photovoltaic systems. Solar Energy, 189, 291-298.) and simple averaging of the forecasts are implemented for evaluation.
+[comment]: <> (Two state-of-the-art forecast combination methods RE &#40;Liu, L., Zhan, M., & Bai, Y. &#40;2019&#41;. A recursive ensemble model for forecasting the power output of photovoltaic systems. Solar Energy, 189, 291-298.&#41; and simple averaging of the forecasts are implemented for evaluation.)
 
 [comment]: <> (#### Proposed location-based Global Forecasting Approach)
 
