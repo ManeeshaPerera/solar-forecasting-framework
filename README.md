@@ -1,7 +1,17 @@
 ## Multi-Resolution, Multi-Horizon Distributed Solar PV Power Forecasting with Forecast Combinations
 
 
-This repository includes the code for the paper titled as "Multi-Resolution, Multi-Horizon Distributed Solar PV Power Forecasting with Forecast Combinations"
+This repository includes the code for the paper titled as "Multi-Resolution, Multi-Horizon Distributed Solar PV Power Forecasting with Forecast Combinations". Please cite the following paper, if you are using this repository.
+
+```
+@article{Perera2022,
+    title = {{Multi-Resolution, Multi-Horizon Distributed Solar PV Power Forecasting with Forecast Combinations}},
+    year = {2022},
+    journal = {Expert Systems with Applications},
+    author = {Perera, M.,de Hoog, J., Bandara, K.,Halgamuge, S.},
+    publisher = {Elsevier Ltd},
+}
+```
 
 ## Software Requirements
 Software requirements are listed in `requirements.txt`
