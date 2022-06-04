@@ -9,7 +9,8 @@ This repository includes the code for the paper titled as "Multi-Resolution, Mul
     year = {2022},
     journal = {Expert Systems with Applications},
     author = {Perera, M.,de Hoog, J., Bandara, K.,Halgamuge, S.},
-    publisher = {Elsevier Ltd},
+    url = {https://doi.org/10.1016/j.eswa.2022.117690},
+    doi = {10.1016/j.eswa.2022.117690}
 }
 ```
 
